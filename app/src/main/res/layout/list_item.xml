@@ -1,0 +1,102 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/shape">
+    <data>
+        <variable name="info" type="com.zappos.ilovezappos.ProductInfo"/>
+        <variable name="infos" type="com.zappos.ilovezappos.ProductInfoList"/>
+    </data>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="2">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="11dp"
+            android:id="@+id/imageView"
+            bind:imageUrl="@{info.thumbnailImageUrl}"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_toEndOf="@+id/imageView"
+            android:layout_marginStart="16dp">
+
+            <TextView
+                android:text="@{info.type}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="10dp"
+                android:id="@+id/textView4"
+                android:textColor="@color/red"
+                bind:type="@{info.differ}"
+                />
+
+            <TextView
+                android:text="@{info.brandName}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView4"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="38dp"
+                android:id="@+id/textView6"
+                android:layout_marginRight="10dp"
+                android:layout_toStartOf="@+id/textView15" />
+
+            <TextView
+                android:text="@{info.productName}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView6"
+                android:layout_alignStart="@+id/textView6"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/textView9"
+                android:layout_toStartOf="@+id/textView15" />
+
+            <TextView
+                android:text="@{info.originalPrice}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                bind:isVisible="@{info.differ}"
+                android:background="@drawable/line"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/textView9"
+                android:id="@+id/textView13" />
+
+            <TextView
+                android:text="@{info.price}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                bind:price="@{info.differ}"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_below="@+id/textView13"
+                android:id="@+id/textView14" />
+
+            <TextView
+                android:text="5.0 Star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView15"
+                android:layout_alignBaseline="@+id/textView14"
+                android:layout_alignBottom="@+id/textView14"
+                android:layout_alignEnd="@+id/textView4" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>

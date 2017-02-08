@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<data>
+    <variable name="info" type="com.zappos.ilovezappos.ProductInfo"/>
+</data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:background="@android:color/white"
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+<include android:id="@+id/hl" layout="@layout/header_layout"/>
+<LinearLayout
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:paddingTop="@dimen/activity_horizontal_margin"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingEnd="@dimen/activity_horizontal_margin">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/imageView2"
+        android:layout_weight="0.26" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.50">
+
+        <TextView
+            android:text="@{info.brandName}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:textSize="20dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/brand_name" />
+
+        <TextView
+            android:text="@{info.price}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/brand_name"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="27dp"
+            android:textSize="20dp"
+            android:textColor="@color/green"
+            android:id="@+id/price" />
+
+        <TextView
+            android:text="@{info.productName}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/brand_name"
+            android:layout_alignStart="@+id/brand_name"
+            android:layout_marginEnd="35dp"
+            android:id="@+id/product_name" />
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingBar2"
+            android:layout_below="@+id/product_name"
+            android:layout_alignStart="@+id/product_name"
+            android:layout_marginTop="8dp"
+            style="@style/Widget.AppCompat.RatingBar.Small" />
+
+        <TextView
+            android:text=" 5 Reviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ratingBar2"
+            android:layout_toEndOf="@+id/ratingBar2"
+            android:layout_marginStart="11dp"
+            android:textSize="17dp"
+            android:id="@+id/review_count" />
+
+        <TextView
+            android:text="@{info.originalPrice}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price"
+            android:layout_alignEnd="@+id/price"
+            android:textSize="10dp"
+            android:background="@drawable/line"
+            android:visibility="invisible"
+            android:id="@+id/orignal_price" />
+
+        <TextView
+            android:text="@{info.percentOff}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/orignal_price"
+            android:layout_alignEnd="@+id/orignal_price"
+            android:visibility="invisible"
+            android:id="@+id/percent_off" />
+
+        <TextView
+            android:text="Web Info"
+            android:textSize="20dp"
+            android:textColor="#2a21ed"
+            android:layout_width="wrap_content"
+            android:textStyle="italic"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/review_count"
+            android:layout_alignStart="@+id/ratingBar2"
+            android:layout_marginTop="21dp"
+            android:id="@+id/webpage_link" />
+    </RelativeLayout>
+
+</LinearLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            app:srcCompat="@drawable/cart"
+            android:id="@+id/cart_float"
+            android:layout_margin="15dp"
+            />
+</android.support.design.widget.CoordinatorLayout>
+</layout>

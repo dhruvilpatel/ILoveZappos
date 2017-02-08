@@ -1,0 +1,91 @@
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/header"
+    android:id="@+id/relativeLayout">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/header_backarrow"
+        android:src="@drawable/ac_title_left"
+        android:layout_marginLeft="5dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:text="Title"
+        android:id="@+id/header_name"
+        android:textColor="#fff"
+        android:textSize="@dimen/action_bar_header"
+        android:layout_centerVertical="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Post"
+        android:id="@+id/post"
+        android:visibility="gone"
+        android:textColor="#fff"
+        android:layout_alignBottom="@+id/header_backarrow"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBaseline="@+id/header_name"
+        android:layout_marginRight="29dp"
+        android:layout_marginEnd="29dp" />
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/cart"
+        android:src="@drawable/cart"
+        android:layout_marginLeft="5dp"
+        android:visibility="gone"
+        android:layout_marginEnd="50dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/share"
+        android:src="@drawable/share"
+        android:layout_marginLeft="5dp"
+        android:layout_centerVertical="true"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="Open in Browser"
+        android:id="@+id/browser"
+        android:layout_marginRight="10dp"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_alignBottom="@+id/header_backarrow"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text=""
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/count"
+        android:visibility="gone"
+        android:background="@drawable/rounded_corner"
+        android:layout_alignBottom="@+id/header_backarrow"
+        android:layout_alignEnd="@+id/cart"
+        android:layout_marginEnd="14dp" />
+
+
+</RelativeLayout>

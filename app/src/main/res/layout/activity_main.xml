@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background">
+    <data>
+
+        <variable name="infos" type="com.zappos.ilovezappos.ProductInfoList"/>
+    </data>
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    >
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/search_btn"
+        android:layout_marginStart="12dp"
+        android:onClick="@{infos.onText}"
+        android:id="@+id/search_edittext"
+        />
+
+    <Button
+        android:text="Search"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="@{infos.search}"
+        android:id="@+id/search_btn" />
+
+</RelativeLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="5dp"
+            android:id="@+id/product_list"
+            android:divider="@android:color/transparent"
+            bind:items="@{infos.productList}"/>
+
+</LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:id="@+id/retry_layout"
+            android:visibility="gone">
+
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/retry_icon"
+                    android:src="@drawable/retry"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/retry"
+                    android:gravity="center"
+                    android:id="@+id/retry"
+                    android:layout_above="@+id/retry_icon"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>
+</layout>
